@@ -1,0 +1,76 @@
+/*body: eliminar si meto es carousel en un proyecto. Aquí es solo para presentarlo bien en el ejemplo de Libreria Alvaro*/
+body{
+    display: flex;
+    place-items: center;
+    min-height: 100vh;
+    background: #EFC076;
+    transform: translateX(30%);
+}
+.main__carousel-cont{
+    width: 100%;
+
+    width: 90%;
+    /*puede variar //(y es el ancho original de la img)*/
+    max-width: 100%;
+
+    max-width: 900px;
+    /*para centrar*/
+    margin: auto; 
+    /*ocultar las img que se están saliendo*/
+    /*COMENTAR EL OVERFLOW PARA PODER VER EL FUNCIONAMIENTO Y CREACIÓN DEL CAROUSEL/SLIDE*/
+    /* overflow: hidden; */
+    /*borde blanco*/
+    box-shadow: /*0 0 0 10px #fff,*/ 
+                /*sombra adicional*/
+                0 15px 50px; 
+    /*para los btn*/
+    position: relative; 
+}
+/*lo que limitará las img*/
+.main__carousel-cont__slider{ 
+    /*el ancho de la img (nºimg(7)x100)*/
+    width: 500%;
+    /*junto con el width, para poner las img al lado de la otra*/
+    display: flex;
+    /*el alto de la img*/
+    height: 100%; 
+    margin-left: -100%;
+}
+.main__carousel-cont__slider__section{
+    width: 100%;
+}      
+.main__carousel-cont__slider__section__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*para que las imagenes no se estiren*/
+    object-fit: cover;
+}
+
+.main__carousel-cont__btn{
+    /*posicionar los botones, uno a cada lado del slider*/
+    position: absolute; 
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, .7);
+    /*centrarlos*/
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.main__carousel-cont__btn:hover{
+    background-color: #fff;
+}
+.main__carousel-cont__btn--left{
+    left: 10px;
+}
+.main__carousel-cont__btn--right{
+    right: 10px;
+}

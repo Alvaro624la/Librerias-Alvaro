@@ -1,0 +1,265 @@
+/*BTN YO*/
+.header__s-btns{
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+}
+.header__s-btns__yo{
+      width: 100px;
+      height: 100px;
+      background-color: rgba(143, 174, 147, 0.4);
+      border: 0px black solid;
+      margin: 0px 20px;
+      font-family: 'Josefin Slab', serif, Helvetica, Arial;
+      font-size: 0.9em;
+      font-weight: 600;
+      border: 10px groove #61714d;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.5s;
+      color: black;
+      animation-name: zoomIn;
+      animation-duration: 1s;
+}      
+.header__s-btns__yo:hover{
+        border: 16px groove #61714d;
+        font-size: 1em;
+        background-color: #8fae93;
+        transition: all 0.5s;
+}
+
+/*MODAL*/
+/*modal sin abrir*/
+.modal-yo{
+    visibility: hidden;
+    left: -100%;
+    position: absolute;
+    z-index: 1;
+}
+/*modal abierto*/
+.modal-yo:target{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    transition: left 1s;
+}
+/*modal --> contenido interior*/
+.modal-yo__content{
+    /*Para hacerlo responsivo % u otros, manual con media queries con px u otros*/
+    width: 700px;
+    height: 500px;
+    /*limitar el alto y ancho para que nos haga super pequeño debido a % de antes*/
+    /* min-width: 400px; */
+    /* min-height: 300px; */
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5em;
+    background-color: white;
+    background-image: url('/src/img/modalbg1.jpg');
+    /* filter: brightness(1.1);*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 30px;
+}
+  .modal-yo__content__foto{
+      width: 150px;
+      height: 170px;
+      border-radius: 15px;
+      margin: 15px;
+      box-shadow: 6px 6px 16px 0px black;
+      /* border: 1px dashed grey;*/
+      /* foto => 180px ancho.*/
+  }
+  .modal-yo__content__datos{
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      list-style: none;
+  }
+  .modal-yo__content__datos__nombre{
+      display: flex;
+      flex-direction: row;
+      margin-bottom: -16px;
+  }
+  .modal-yo__content__datos__nombre--negrita{
+      font-weight: bold;
+  }
+  .modal-yo__content__datos__telefono__link{
+      color: red;
+  }
+  .modal-yo__content__datos__telefono__link:hover{
+      color: purple;
+  }
+  .modal-yo__content__datos__telefono__link:active{
+      color: red;
+  }
+  .modal-yo__content__datos__telefono__link:visited{
+      color: purple;
+  }
+
+  .modal-yo__content__datos__ciudad{
+      display: flex;
+      flex-direction: row;
+      margin-bottom: -16px;
+  }
+  .modal-yo__content__datos__email__link{
+      color: black;
+  }
+  .modal-yo__content__datos__email__link:hover{
+      color: purple;
+  }
+  .modal-yo__content__datos__email__link:active{
+      color: red;
+  }
+  .modal-yo__content__datos__email__link:visited{
+      color: purple;
+  }
+  .modal-yo__content__datos__email__link__span{
+      color: red;
+  }
+
+  .modal-yo__content__descripcion{
+      width: 100%;
+      height: 45%;
+      padding: 20px;
+      font-weight: 600;
+  }
+    
+/*separacion entre li(NOMBRE, TLFNO, CIUDAD, EMAIL) (> *{} hijos de la clase padre ..._datos)*/
+.modal-yo__content__datos > *{
+    margin-left: -10%;
+    padding-bottom: 10px;
+}
+/*boton close*/
+.modal-yo__close{
+  /*relativo al documento*/
+    position: relative;
+    /*transformo en elemento de bloque el boton para que ocupe un espacio*/
+    display: block;
+}
+.modal-yo__close::after{
+    content: 'x';
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    /*colocamos arriba a la derecha el btn y damos dimensiones*/
+    right: 0rem;
+    top: 2rem;
+    width: 2rem;
+    height: 2rem;
+
+    transform: translate(-50%, -50%);
+    /*absoluto, dentro del relativo del elemento <a>(modal-yo__close)*/
+    position: absolute;
+
+    /*situamos la X en el medio del btn*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+    background-color: black;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+    /*¿se puede hover encima de ::after?*/
+    /* &:hover{*/
+    /*   border: 1px solid red;*/
+    /* }*/
+}
+/*fondo oscuro (superposicion boton close)*/
+.modal-yo__close::before{
+    content: "";
+    /*lo situamos para ocupar toda la pantalla*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    
+    background-color: rgba(0,0,0,0.7);
+    cursor: default;
+}
+.modal-yo__close::before:hover{
+    background-color: rgba(0,0,0,0.2);
+    transition: all 0.5s;
+}
+
+/*MEDIA QUIERIES*/
+@media (max-width: 992px) {
+    .modal-yo {
+      /*modal contenido interior*/
+    }
+    .modal-yo__content {
+      width: 600px;
+      height: 500px;
+    }
+  }
+  @media (max-width: 768px) {
+    .modal-yo {
+      /*modal contenido interior*/
+    }
+    .modal-yo__content {
+      width: 400px;
+      height: 600px;
+    }
+    .modal-yo__content__foto {
+      width: 105px;
+      height: 120px;
+    }
+    .modal-yo__content__datos {
+      margin-left: 10px;
+    }
+    .modal-yo__content__descripcion {
+      height: auto;
+    }
+  }
+  @media (max-width: 576px) {
+    .modal-yo {
+      /*modal contenido interior*/
+    }
+    .modal-yo__content {
+      width: 300px;
+      height: 500px;
+      flex-direction: column;
+      place-items: center;
+    }
+    .modal-yo__content__foto {
+      width: 100px;
+      height: 110px;
+      margin-bottom: 10px;
+    }
+    .modal-yo__content__datos {
+      width: 100%;
+      font-size: 1em;
+      padding: 0;
+      margin: 0;
+      margin-left: 10px;
+    }
+    .modal-yo__content__datos * {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    .modal-yo__content__descripcion {
+      display: none;
+    }
+  
+    /*separacion entre li (> *{} hijos de la clase padre ..._datos)*/
+    .modal-yo__content__datos > * {
+      margin: 0;
+      padding: 0;
+    }
+  }

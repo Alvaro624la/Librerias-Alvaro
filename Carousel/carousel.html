@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <!--CSS-->
+    <link href="carousel.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <main class="main">
+        <!--HTML, CSS, JS PURE Carousel-->
+        <div class="main__carousel-cont">
+            <div class="main__carousel-cont__slider" id="slider">
+                <div class="main__carousel-cont__slider__section">
+                    <!--Poner en orden segun JS(la 1a será la 9(porque la 9 la roto con JS a la primera posicion, despues de empezar el slider(afterbegin)))-->
+                    <img class="main__carousel-cont__slider__section__img" src="./img/5.webp" alt="">
+                </div>
+                <div class="main__carousel-cont__slider__section">
+                    <img class="main__carousel-cont__slider__section__img" src="./img/1.webp" alt="">
+                </div>
+                <div class="main__carousel-cont__slider__section">
+                    <img class="main__carousel-cont__slider__section__img" src="./img/2.webp" alt="">
+                </div>
+                <div class="main__carousel-cont__slider__section">
+                    <img class="main__carousel-cont__slider__section__img" src="./img/3.webp" alt="">
+                </div>
+                <div class="main__carousel-cont__slider__section">
+                    <img class="main__carousel-cont__slider__section__img" src="./img/4.webp" alt="">
+                </div>
+            </div>
+            <div class="main__carousel-cont__btn main__carousel-cont__btn--right" id="btn-right">&#62;</div>
+            <div class="main__carousel-cont__btn main__carousel-cont__btn--left" id="btn-left">&#60;</div>
+        </div>
+    </main>
+    <script src="carousel.js"></script>
+</body>
+</html>
